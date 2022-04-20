@@ -1,0 +1,17 @@
+org: thalissilva
+app: nodeless
+service: aws-node-project
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  img-analysis:
+    handler: handler.main
+    events: 
+      - http:
+          path: analyse
+          method: get
